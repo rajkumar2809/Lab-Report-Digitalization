@@ -1,0 +1,25 @@
+{% include 'common/top.html' %}
+<style type="text/css">
+	table, th, td {
+		padding: 10px;
+  border: 1px solid black;
+}
+</style>
+<div class="table-responsive">
+<table align="center">
+<tr>
+		<th> User </th> <th> Title </th> <th> Description </th> <th> Size </th> <th> Time </th> <th> Url </th>
+</tr>
+
+{% for rec in data %}
+		<tr>
+		<td>{{ rec.user }}</td>  
+		<td>{{ rec.title }}  </td>
+		<td>{{rec.description }} </td>
+		<td>{{ rec.size }}  </td>
+		<td>{{ rec.time }}  </td>
+		<td> <a href="http://127.0.0.1:8000/dashboard/allstudents/{{ rec.url }}/"> Download </a> </td>
+		</tr>
+{% endfor %}
+</table>
+</div>
